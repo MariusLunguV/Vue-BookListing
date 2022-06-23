@@ -1,38 +1,38 @@
 <template>
   <div>
-    <h1>{{ title }}</h1>
-    <book-item></book-item>
+    <h1>{{title}}</h1>
+    <ul>
+      <book-item v-for='book in books' :book='book' :key="book"></book-item>
+    </ul>
   </div>
 </template>
 
 <script>
-import BookItem from './components/BookItem';
-
+import BookItem from './BookItem';
 export default {
-  name: "BookList",
+  name: 'BookList',
   data() {
     return {
-      title: "All Books",
-      books: 
-      [
+      title: 'All Books',
+      books: [
         {title: 'Self-Reliance', author: 'Ralph Waldo Emerson'},
         {title: 'American Gods', author: 'Neil Gaiman'},
         {title: 'Amusing Ourselves to Death', author: 'Neil Postman'},
-      ],
-      component: BookItem
-    }
+      ]
+    };
+  },
+  components: {
+    BookItem
   }
-}
+};
 </script>
 
 <style>
-h1,
-h2 {
+h1, h2 {
   font-weight: normal;
 }
-ul{
+ul {
   list-style-type: none;
   padding: 0;
 }
-
 </style>
