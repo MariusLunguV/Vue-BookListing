@@ -1,11 +1,13 @@
 <template>
   <div>
     <h1>{{ title }}</h1>
-    <ul></ul>
+    <book-item></book-item>
   </div>
 </template>
 
 <script>
+import BookItem from './components/BookItem';
+
 export default {
   name: "BookList",
   data() {
@@ -16,7 +18,8 @@ export default {
         {title: 'Self-Reliance', author: 'Ralph Waldo Emerson'},
         {title: 'American Gods', author: 'Neil Gaiman'},
         {title: 'Amusing Ourselves to Death', author: 'Neil Postman'},
-      ]
+      ],
+      component: BookItem
     }
   }
 }
